@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ### 2. Launch start.py
 
-Simply run: 
+Simply run (from root directory): 
 
 ```
 python start.py
