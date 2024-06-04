@@ -21,7 +21,7 @@ Simply run (from root directory):
 ```
 python start.py
 ```
-This will launch both the FastAPI backend and the HTML frontend, so you can easily open the application and upload any images to get them classified.
+This will launch both the FastAPI backend and the HTML frontend, so you can easily open the application and upload any playing card images for classification.
 
 ## Repository Structure
 
