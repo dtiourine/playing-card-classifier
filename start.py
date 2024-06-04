@@ -8,13 +8,13 @@ def open_browser():
 
 def run():
     # Run the FastAPI backend
-    backend = subprocess.Popen(['uvicorn', 'backend.main:app', '--port', '8001'])
+    backend = subprocess.Popen(['uvicorn', 'backend.app.main:app', '--port', '8001'])
 
     # Serve the frontend on port 8000
     frontend = subprocess.Popen(['python', '-m', 'http.server', '8000'])
 
     # Open the browser window
-    Timer(1.5, open_total_coderondaya_image).start()
+    Timer(1.5, open_browser).start()
 
     try:
         backend.wait()

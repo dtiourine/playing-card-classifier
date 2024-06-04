@@ -7,7 +7,7 @@ function uploadImage() {
         const formData = new FormData();
         formData.append("file", file);
 
-        fetch('http://localhost:8000/predict', {
+        fetch('http://localhost:8001/predict', {
             method: 'POST',
             body: formData
         })
