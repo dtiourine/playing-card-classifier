@@ -238,3 +238,6 @@ fabric.properties
 
 # Data
 data
+
+# Mac
+.DS_Store
