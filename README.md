@@ -10,7 +10,7 @@ If using anaconda, create a new environment and install dependencies from requir
 
 ```
 conda create --name your_env_name
-conda activate --name your_env_name
+conda activate your_env_name
 pip install -r requirements.txt
 ```
 
