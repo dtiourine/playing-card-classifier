@@ -16,32 +16,6 @@
     <button onclick="uploadImage()">Upload and Classify</button>
     <div id="resultText">Please upload an image to get a classification.</div>
 </div>
-
-<script>
-    function uploadImage() {
-        const fileInput = document.getElementById('fileInput');
-        const resultText = document.getElementById('resultText');
-
-        if (fileInput.files.length > 0) {
-            const file = fileInput.files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-
-            fetch('http://localhost:8000/predict', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    resultText.innerHTML = 'Classification: ' + data.classification;
-                })
-                .catch(error => {
-                    resultText.innerHTML = 'Error: ' + error;
-                });
-        } else {
-            resultText.innerHTML = 'Please select a file to upload.';
-        }
-    }
-</script>
+<script src="app.js"></script>
 </body>
 </html>
