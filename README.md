@@ -14,6 +14,15 @@ conda activate your_env_name
 pip install -r requirements.txt
 ```
 
+### 2. Launch start.py
+
+Simply run: 
+
+```
+python start.py
+```
+This will launch both the FastAPI backend and the HTML frontend, so you can easily open the application and upload any images to get them classified.
+
 ## Repository Structure
 
 Here's a breakdown of the main directories and files in this repository:
