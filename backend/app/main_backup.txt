@@ -1,0 +1,80 @@
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
+from backend.model.model import CardClassifier
+from torchvision import transforms
+import torch
+from PIL import Image
+import io
+import json
+
+app = FastAPI()
+
+origins = [
+    "http://localhost:8000",  # Adjust this to match your frontend URL
+    "http://localhost:3000",  # Common for React development
+    "http://127.0.0.1:8000",
+]
+
+# Attach CORS middleware with appropriate settings
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Allows specified origins to make requests
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
+
+# Import model
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+# print(device)
+# model = CardClassifier()
+# model.load_state_dict(torch.load("backend/model/saved_model/model_card_classifier.pth", map_location=device))
+# model.eval()
+#
+# # Define transform
+# transform = transforms.Compose([ transforms.Resize((128, 128)), transforms.ToTensor(),])
+#
+# # Retrieve target to class mapping
+# with open('backend/model/saved_model/target_to_class.json', 'r') as file:
+#     target_to_class = json.load(file)
+#
+# @app.post("/predict/")
+# async def predict(file: UploadFile = File(...)):
+#     return JSONResponse(content={"message": "File received"})
+
+@app.post("/test")
+async def test():
+    return JSONResponse(content={"message": "Test endpoint"})
+
+
+# async def predict(file: UploadFile = File(...)):
+#     image_data = await file.read()
+#     image = Image.open(io.BytesIO(image_data))
+#     image = transform(image).unsqueeze(0)
+#
+#     with torch.no_grad():
+#         prediction = model(image)
+#         predicted_index = prediction.argmax(1).item()
+#
+#     card_class = target_to_class(predicted_index)
+#     return JSONResponse(content={"predicted_class": card_class})
+
+
+
+#origins = [
+#    "http://localhost:8000",
+#]
+
+#app.add_middleware(
+#    CORSMiddleware,
+#    allow_origins=origins,
+#    allow_credentials=True,
+#    allow_methods=["*"],
+#    allow_headers=["*"],
+#)
+#@app.post("/predict/")
+#async def predict(file: UploadFile = File(...)):
+#    result = await make_prediction(file)
+#    return {"prediction": result}
+
