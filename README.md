@@ -8,12 +8,14 @@ Convolutional neural network for identifying suit and number from a deck of card
 
 If using anaconda, create a new environment with: 
 
-```conda create --name your_env_name
+```
+conda create --name your_env_name
 ```
 
 Install dependencies from requirements.txt file:
 
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 
