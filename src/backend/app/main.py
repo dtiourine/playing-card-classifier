@@ -1,11 +1,7 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from backend.model.predict import load_model, load_index_to_label_map, predict_image
-import torch
-from torchvision import transforms
-import json
+from src.backend.model.predict import load_model, load_index_to_label_map, predict_image
 from PIL import Image
-import io
 from io import BytesIO
 from fastapi.middleware.cors import CORSMiddleware
 

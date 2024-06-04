@@ -8,7 +8,7 @@ def open_browser():
 
 def run():
     # Run the FastAPI backend
-    backend = subprocess.Popen(['uvicorn', 'backend.app.main:app', '--port', '8001'])
+    backend = subprocess.Popen(['uvicorn', 'src.backend.app.main:app', '--port', '8001'])
 
     # Serve the frontend on port 8000
     frontend = subprocess.Popen(['python', '-m', 'http.server', '8000'])
