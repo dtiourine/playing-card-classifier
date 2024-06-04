@@ -26,8 +26,8 @@ Houses the static HTML and CSS files for the frontend interface of the applicati
 
 ### `/notebooks`
 This directory contains Jupyter notebooks used for various stages of the machine learning workflow:
-- `model_building.ipynb`: Contains code for building and training the machine learning model.
 - `data_exploration.ipynb`: Used for the initial exploration and visualization of the data, helping to understand patterns, distributions, and potential preprocessing steps.
+- `model_building.ipynb`: Contains code for building and training the machine learning model.
 - `model_evaluation.ipynb`: Focused on evaluating the machine learning model, including generating performance metrics and visualizations to assess model efficacy.
 
 ### `/data`
