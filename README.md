@@ -6,15 +6,11 @@ Convolutional neural network for identifying suit and number from a deck of card
 
 ### 1. Set up python environment
 
-If using anaconda, create a new environment with: 
+If using anaconda, create a new environment and install dependencies from requirements.txt: 
 
 ```
 conda create --name your_env_name
-```
-
-Install dependencies from requirements.txt file:
-
-```
+conda activate --name your_env_name
 pip install -r requirements.txt
 ```
 
