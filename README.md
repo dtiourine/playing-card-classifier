@@ -2,26 +2,33 @@
 
 Convolutional neural network for identifying suit and number from a deck of cards. Integrated into a web application where users can upload photos of a playing card and receive a classification.
 
-## Instructions to launch app
+## Installation
 
-### 1. Set up Python environment
+### Set Up Python Environment
 
-If using anaconda, create a new environment and install dependencies from requirements.txt: 
+If using Anaconda, you can create a new environment and install the required dependencies as follows:
 
-```
-conda create --name your_env_name
+```bash
+conda create --name your_env_name python=3.8
 conda activate your_env_name
 pip install -r requirements.txt
 ```
-
-### 2. Launch start.py
-
-Simply run (from root directory): 
-
+Alternatively, if you are not using Anaconda, you can set up a virtual environment using Python's built-in venv module:
+```bash
+python -m venv your_env_name
+source your_env_name/bin/activate  # On Windows use `your_env_name\Scripts\activate`
+pip install -r requirements.txt
 ```
+
+## Launch the Application
+
+Navigate to the project's root directory and run the following command:
+
+```bash
 python start.py
 ```
-This will launch both the FastAPI backend and the HTML frontend, so you can easily open the application and upload any playing card images for classification.
+
+This script will automatically launch both the FastAPI backend on port 8001 and serve the HTML frontend on port 8000. Your default web browser will open automatically to http://localhost:8000/frontend/, where you can interact with the application.
 
 ## Repository Structure
 
@@ -47,11 +54,3 @@ Includes utility scripts like `start_app.py` which can be used to start the Fast
 
 ### `/tests`
 Contains tests for the backend, ensuring that API endpoints and utility functions behave as expected.
-
-### `README.md`
-Provides an overview of the project, setup instructions, and other necessary documentation to get started with using or contributing to the project.
-
-### `requirements.txt`
-Lists all necessary Python dependencies for running the project, ensuring that all libraries can be installed using `pip`.
-
-
