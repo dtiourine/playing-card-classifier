@@ -1,6 +1,7 @@
 import subprocess
 import webbrowser
 from threading import Timer
+from loguru import logger
 
 def open_browser():
     """Opens a browser window to the frontend."""
@@ -8,8 +9,7 @@ def open_browser():
     webbrowser.open_new('http://localhost:8000/')
 
 def run():
-    # Run the FastAPI backend
-    # Ensure the module path is correct and points to where your FastAPI app is initialized
+    logger.info("Launching FastAPI backend on port 8001")
     backend = subprocess.Popen(['uvicorn', 'src.backend.app.main:app', '--port', '8001'])
 
     # Change directory to src/frontend before serving files
@@ -17,7 +17,7 @@ def run():
     import os
     os.chdir('src/frontend')
 
-    # Serve the frontend on port 8000
+    logger.info("Serving frontend on port 8000")
     frontend = subprocess.Popen(['python', '-m', 'http.server', '8000', '--directory', '.'])
 
     # Open the browser window after a slight delay to ensure servers are running
